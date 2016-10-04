@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>First angular demo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body ng-app="angular-frontend" ng-controller="frontController">
+		<!--NavBar-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Hotel Treebo</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="col-sm-12 price-form"
+		<!--Min and MAx Price-->
+		<div class="col-sm-6">
+			<div class="input-group">
+				<span class="input-group-addon">Min Price</span>
+				<select name="minPrice" id="minPrice" ng-model="priceInfo.min" class="form-control">
+					<option value="500">500</option>
+						
+						<option value="1000">1000</option>
+						<option value="2000">2000</option>
+						<option value="2500">2500</option>
+						<option value="3000">3000</option>
+						<option value="3500">3500</option>
+						<option value="5000">5000</option>
+						
+
+				</select>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="input-group">
+				<span class="input-group-addon">Max Price</span>
+				<select name="maxPrice" id="maxPrice" ng-model="priceInfo.max" class="form-control">
+					<option value="500">500</option>
+						<option value="1000">1000</option>
+						<option value="2000">2000</option>
+						<option value="2500">2500</option>
+						<option value="3000">3000</option>
+						<option value="3500">3500</option>
+						<option value="5000">5000</option>
+						</select>
+					</div>
+				</div>
+</div>
+</div>
+	<!--<div class="well" ng-repeat="hotels in hotel">
+
+		<h3>{{ hotels.name }}</h3>
+		<p><strong>Image: </strong>{{ hotels.image }}</p>
+		<p><strong>Location: </strong>{{ hotels.location }}</p>
+			<p><strong>Price: </strong>{{ hotels.price | currency }}</p>-->
+
+							
+			<!--Hotel Listing	-->
+			<div class="container">
+				<div class="col-sm-4" ng-repeat="fronts in front | pricefilter:priceInfo">
+					<div class="thumbnail">
+						<img ng-src="images/{{ fronts.image }}.jpeg" alt="">
+						<div class="caption">
+					<!--		<h3>{{ fronts.name }}</h3>
+							<p><strong>Rating: </strong>{{ fronts.rating }}</p>
+								<p><strong>Link: </strong>{{ fronts.link }}</p>
+											<p><strong>Actual Price: </strong>{{ fronts.actualprice }}</p>
+							<p><strong>Discount: </strong>{{ fronts.discount }}</p>
+		         <p><strong>location: </strong>{{ fronts.location }}</p>-->
+		         <div ng-hide="showDetails === true">
+		         	<h3><i class="glyphicon glyphicon-tag"></i> {{fronts.actualprice | currency }}
+		         	</h3>
+		         	<h4><i class="glyphicon glyphicon-home"></i> {{fronts.location}}
+		         		<span class="label label-primary label-sm">{{fronts.rating}}</span>
+		         	</h4>
+		         </div>
+		         <button class=" btn btn-xs btn-success"
+		         			ng-hide="showDetails === true"
+		         			ng-Click="showDetails = !showDetails">
+		         			Details
+		         		</button>
+<button class=" btn btn-xs btn-danger"
+		         			ng-show="showDetails === true"
+		         			ng-Click="showDetails = !showDetails">
+		         		Close
+		         		</button>		         
+
+		         		<div class="details" ng-show="showDetails === true">
+		         			<h4>
+		         				<span class="label label-primary">Beds: {{fronts.details.bedrooms}}</span>
+		<span class="label label-primary">Baths: {{fronts.details.bathrooms}}</span>
+		<span class="label label-primary">SqFt: {{fronts.details.area}}</span>
+		
+		</h4>
+		<p>{{fronts.link}}</p>
+		<p>{{fronts.discount}}</p>
+    </div>
+   </div>
+   </div>
+
+	</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>	
+	<script src="app.js"></script>
+	<script src="scripts/frontController.js"></script>
+
+	<script src="scripts/frontfactory.js"></script>
+
+	<script src="scripts/pricefilter.js"></script>
+	</html>

@@ -1,0 +1,68 @@
+[
+{
+		"id": 1,
+	"name" :"Treebo Silicon Business",
+	"rating" : 3.4,
+	"link": "http://treebo.com/",
+	"actualprice" : 3400,
+	"discount" : 10,
+  "location" : "Electronucs city, Bangalore",
+  "details" : {
+  	"bedrooms" : 2,
+  	"bathrooms" : 1,
+  	"area" : 2142
+  },
+    "image" :  "hotel1"
+       },
+
+{
+		"id": 2,
+	"name" :"Treebo Singh Sons",
+	"rating" : 4.2,
+	"link": "http://treebosilicon.com/",
+	"actualprice" : 5000,
+	"discount" : 10,
+  "location" : "Karolbagh, New Delhi",
+   "details" : {
+  	"bedrooms" : 2,
+  	"bathrooms" : 1,
+  	"area" : 2142
+  },
+    "image" : "hotel2"
+       },
+
+
+{
+		"id": 3,
+	"name" :"Golden Pearl",
+	"rating" : 3.8,
+	"link": "http://treebo.com/",
+	"actualprice" : 2500,
+	"discount" : 10,
+  "location" : "Kormangla, Bangalore",
+   "details" : {
+  	"bedrooms" : 2,
+  	"bathrooms" : 1,
+  	"area" : 2542
+  },
+    "image" :  "hotel3"
+       },
+
+
+{
+		"id": 4,
+	"name" :"Grand Continents",
+	"rating" : 4.2,
+	"link": "http://treebo.com/",
+	"actualprice" : 500,
+	"discount" : 15,
+  "location" : "BTM Layout, Bangalore",
+   "details" : {
+  	"bedrooms" : 2,
+  	"bathrooms" : 1,
+  	"area" : 2142
+  },
+    "image" :  "hotel4"
+       }
+
+]
